@@ -8,12 +8,17 @@ Use cWebMenuItem.pkg
 Use cWebForm.pkg
 Use cWebColumnButton.pkg
 Use cequipoDataDictionary.dd
+Use cligaDataDictionary.dd
 
 Object oEquipoSelect is a cWebView
 
     // Your DDO structure will go here
     
+    Object oLiga_DD is a cligaDataDictionary
+    End_Object
+
     Object oEquipo_DD is a cequipoDataDictionary
+        Set DDO_Server to oLiga_DD
     End_Object
 
     Set Main_DD to oEquipo_DD
@@ -68,12 +73,12 @@ WebRegisterPath ntNavigateForward oEquipoZoom
 
         End_Object 
         
-        Object oLigaID is a cWebColumn
-            Entry_Item equipo.LigaID
-            Set psCaption to "Liga"
-            Set pbNewLine to True
-            Set psCSSClass to "RowDetail"
-        End_Object
+            Object oLigaNombre is a cWebColumn
+                Entry_Item liga.Nombre
+                Set psCaption to "Liga"
+                Set pbNewLine to True
+                Set psCSSClass to "RowDetail"
+            End_Object
 
         // What to do when the row is selected.
         //

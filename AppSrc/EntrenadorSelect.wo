@@ -8,12 +8,17 @@ Use cWebMenuItem.pkg
 Use cWebForm.pkg
 Use cWebColumnButton.pkg
 Use centrenadorDataDictionary.dd
+Use cequipoDataDictionary.dd
 
 Object oEntrenadorSelect is a cWebView
 
     // Your DDO structure will go here
     
+    Object oEquipo_DD is a cequipoDataDictionary
+    End_Object
+
     Object oEntrenador_DD is a centrenadorDataDictionary
+        Set DDO_Server to oEquipo_DD
     End_Object
 
     Set Main_DD to oEntrenador_DD
@@ -71,6 +76,13 @@ WebRegisterPath ntNavigateForward oEntrenadorZoom
         Object oApellido is a cWebColumn
             Entry_Item entrenador.Apellido
             Set psCaption to "Apellido"
+            Set pbNewLine to True
+            Set psCSSClass to "RowDetail"
+        End_Object
+        
+        Object oEquipoNombre is a cWebColumn
+            Entry_Item equipo.Nombre
+            Set psCaption to "Equipo"
             Set pbNewLine to True
             Set psCSSClass to "RowDetail"
         End_Object

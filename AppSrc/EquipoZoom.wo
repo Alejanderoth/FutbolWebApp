@@ -5,17 +5,22 @@ Use cWebGroup.pkg
 Use cWebMenuGroup.pkg 
 Use cWebMenuItem.pkg
 Use cequipoDataDictionary.dd
+Use cligaDataDictionary.dd
 
 Object oEquipoZoom is a cWebView
 
     // Your DDO structure will go here
     
+    Object oLiga_DD is a cligaDataDictionary
+    End_Object
+
     Object oEquipo_DD is a cequipoDataDictionary
+        Set DDO_Server to oLiga_DD
     End_Object
 
     Set Main_DD to oEquipo_DD
     Set Server to oEquipo_DD
-
+    
     Set peWebViewStyle to wvsDrillDown
     Set peViewType to vtZoom
     Set pbShowCaption to False
@@ -44,8 +49,8 @@ Object oEquipoZoom is a cWebView
                 Set peLabelPosition to lpTop
             End_Object
 
-            Object oLigaID is a cWebForm
-                Entry_Item equipo.LigaID
+            Object oLigaNombre is a cWebForm
+                Entry_Item liga.Nombre
                 Set piColumnSpan to 6
                 Set psLabel to "Liga"
                 Set peLabelPosition to lpTop

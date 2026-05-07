@@ -5,12 +5,17 @@ Use cWebGroup.pkg
 Use cWebMenuGroup.pkg 
 Use cWebMenuItem.pkg
 Use cjugadorDataDictionary.dd
+Use cequipoDataDictionary.dd
 
 Object oJugadorZoom is a cWebView
 
     // Your DDO structure will go here
     
+    Object oEquipo_DD is a cequipoDataDictionary
+    End_Object
+
     Object oJugador_DD is a cjugadorDataDictionary
+        Set DDO_Server to oEquipo_DD
     End_Object
 
     Set Main_DD to oJugador_DD
@@ -51,8 +56,8 @@ Object oWebMainPanel is a cWebPanel
         Set peLabelPosition to lpTop
     End_Object
 
-    Object oEquipoID is a cWebForm
-        Entry_Item jugador.EquipoID
+    Object oEquipoNombre is a cWebForm
+        Entry_Item equipo.Nombre
         Set piColumnSpan to 6
         Set psLabel to "Equipo"
         Set peLabelPosition to lpTop

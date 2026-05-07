@@ -72,6 +72,16 @@ Object oWebApp is a cWebApp
                         Send NavigatePath
                     End_Procedure
                 End_Object
+                
+                Object oEquipoZoom_itm is a cWebMenuItem
+                    Set psCaption to "Detalle equipo"
+
+                    WebRegisterPath ntNavigateBegin oEquipoZoom
+
+                    Procedure OnClick
+                        Send NavigatePath
+                    End_Procedure
+                End_Object
 
             End_Object
 
@@ -156,6 +166,7 @@ Object oWebApp is a cWebApp
     Use Dashboard.wo
     Use JugadorZoom.wo
     Use JugadorSelect.wo
+    Use EquipoZoom.wo
     Set phoDefaultView to oDashboard
 
 End_Object

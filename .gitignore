@@ -1,0 +1,19 @@
+# Archivo bloqueado/local del IDE
+IdeSrc/workspace.loc
+
+# Configuración local del workspace
+*.sws
+
+# Temporales y logs
+*.tmp
+*.log
+*.bak
+
+# Archivos de compilación/debug
+*.pdb
+*.obj
+*.idb
+*.ilk
+
+# Cachés de Visual Studio/DataFlex
+*.cache

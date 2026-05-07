@@ -51,31 +51,38 @@ Object oWebApp is a cWebApp
                 End_Object
 
                 Object oViewMenu is a cWebMenuItem
-                Set psCaption to "Vistas"
+                    Set psCaption to "Vistas"
 
-                Object oJugadorZoom_itm is a cWebMenuItem
-                    Set psCaption to "Detalle jugador"
+                    Object oJugadorZoom_itm is a cWebMenuItem
+                        Set psCaption to "Detalle jugador"
 
-                    WebRegisterPath ntNavigateBegin oJugadorZoom
+                        WebRegisterPath ntNavigateBegin oJugadorZoom
 
-                    Procedure OnClick
-                        Send NavigatePath
-                    End_Procedure
-                End_Object
+                        Procedure OnClick
+                            Send NavigatePath
+                        End_Procedure
+                    End_Object
                 
-                Object oJugadorSelect_itm is a cWebMenuItem
-                    Set psCaption to "Jugadores"
+                    Object oJugadorSelect_itm is a cWebMenuItem
+                        Set psCaption to "Jugadores"
 
-                    WebRegisterPath ntNavigateBegin oJugadorSelect
+                        WebRegisterPath ntNavigateBegin oJugadorSelect
 
-                    Procedure OnClick
-                        Send NavigatePath
-                    End_Procedure
-                End_Object
+                        Procedure OnClick
+                            Send NavigatePath
+                        End_Procedure
+                    End_Object
                 
-                Object oEquipoZoom_itm is a cWebMenuItem
-                    Set psCaption to "Detalle equipo"
-                    
+                    Object oEquipoZoom_itm is a cWebMenuItem
+                        Set psCaption to "Detalle equipo"
+
+                        WebRegisterPath ntNavigateBegin oEquipoZoom
+
+                        Procedure OnClick
+                            Send NavigatePath
+                        End_Procedure
+                    End_Object
+
                     Object oEquipoSelect_itm is a cWebMenuItem
                         Set psCaption to "Equipos"
 
@@ -83,24 +90,6 @@ Object oWebApp is a cWebApp
 
                         Procedure OnClick
                             Send NavigatePath
-                        End_Procedure
-                    End_Object
-
-                    WebRegisterPath ntNavigateBegin oEquipoZoom
-
-                    Procedure OnClick
-                        Send NavigatePath
-                    End_Procedure
-                End_Object
-
-                    Object oEquiposItem1 is a cWebMenuItem
-                        Set psCaption to "Equipos"
-
-                        WebRegisterPath ntNavigateBegin oEquipoSelect
-
-                        Procedure OnClick
-                            Forward Send OnClick
-                                Send NavigatePath
                         End_Procedure
                     End_Object
                     
@@ -113,6 +102,19 @@ Object oWebApp is a cWebApp
                             Send NavigatePath
                         End_Procedure
                     End_Object
+
+                    Object oLigasItem is a cWebMenuItem
+                        Set psCaption to "Ligas"
+
+                        WebRegisterPath ntNavigateBegin oLigaSelect
+
+                        Procedure OnClick
+                            Forward Send OnClick
+                                Send NavigatePath
+                        End_Procedure
+                    End_Object
+                    
+                    
 
             End_Object
 
@@ -200,6 +202,7 @@ Object oWebApp is a cWebApp
     Use EquipoZoom.wo
     Use EquipoSelect.wo
     Use LigaZoom.wo
+    Use LigaSelect.wo
     Set phoDefaultView to oDashboard
 
 End_Object

@@ -103,6 +103,16 @@ Object oWebApp is a cWebApp
                                 Send NavigatePath
                         End_Procedure
                     End_Object
+                    
+                    Object oLigaZoom_itm is a cWebMenuItem
+                        Set psCaption to "Detalle liga"
+
+                        WebRegisterPath ntNavigateBegin oLigaZoom
+
+                        Procedure OnClick
+                            Send NavigatePath
+                        End_Procedure
+                    End_Object
 
             End_Object
 
@@ -189,6 +199,7 @@ Object oWebApp is a cWebApp
     Use JugadorSelect.wo
     Use EquipoZoom.wo
     Use EquipoSelect.wo
+    Use LigaZoom.wo
     Set phoDefaultView to oDashboard
 
 End_Object

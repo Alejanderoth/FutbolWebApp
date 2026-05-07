@@ -4,24 +4,24 @@ Use cWebForm.pkg
 Use cWebGroup.pkg
 Use cWebMenuGroup.pkg 
 Use cWebMenuItem.pkg
-Use cligaDataDictionary.dd
+Use cposicionDataDictionary.dd
 
-Object oLigaZoom is a cWebView
+Object oPosicionZoom is a cWebView
 
     // Your DDO structure will go here
     
-    Object oLiga_DD is a cligaDataDictionary
+    Object oPosicion_DD is a cposicionDataDictionary
     End_Object
 
-    Set Main_DD to oLiga_DD
-    Set Server to oLiga_DD
+    Set Main_DD to oPosicion_DD
+    Set Server to oPosicion_DD
 
     Set peWebViewStyle to wvsDrillDown
     Set peViewType to vtZoom
     Set pbShowCaption to False
     Set Verify_Save_msg to 0 // don't confirm saves
     
-    Set psCaption to "Detalle de liga"
+    Set psCaption to "Detalle de posicion"
 
     Set piMaxWidth to 1024
     Set piColumnCount to 12
@@ -29,43 +29,14 @@ Object oLigaZoom is a cWebView
     Object oWebMainPanel is a cWebPanel
         Set piColumnCount to 12
         WebSetResponsive piColumnCount rmMobile to 6
-        
-        // place controls here
-        // Your view will grow as controls are added
-        
-        Object oWebMainPanel is a cWebPanel
-            Set piColumnCount to 12
-            WebSetResponsive piColumnCount rmMobile to 6
 
-            Object oNombre is a cWebForm
-                Entry_Item liga.Nombre
-                Set piColumnSpan to 6
-                Set psLabel to "Nombre"
-                Set peLabelPosition to lpTop
-            End_Object
-
-            Object oPais is a cWebForm
-                Entry_Item liga.Pais
-                Set piColumnSpan to 6
-                Set psLabel to "Pais"
-                Set peLabelPosition to lpTop
-            End_Object
-            
-            Object oEquipos is a cWebForm
-                Entry_Item liga.Equipos
-                Set piColumnSpan to 6
-                Set psLabel to "Equipos"
-                Set peLabelPosition to lpTop
-            End_Object
-
-            Object oEquiposMax is a cWebForm
-                Entry_Item liga.EquiposMax
-                Set piColumnSpan to 6
-                Set psLabel to "Equipos máximos"
-                Set peLabelPosition to lpTop
-            End_Object
+        Object oNombre is a cWebForm
+            Entry_Item posicion.Nombre
+            Set piColumnSpan to 6
+            Set psLabel to "Nombre"
+            Set peLabelPosition to lpTop
         End_Object
-        
+
     End_Object 
     
     // add action menu items here

@@ -135,6 +135,16 @@ Object oWebApp is a cWebApp
                         End_Procedure
                     End_Object
                     
+                    Object oPosicionZoom_itm is a cWebMenuItem
+                        Set psCaption to "Detalle posición"
+
+                        WebRegisterPath ntNavigateBegin oPosicionZoom
+
+                        Procedure OnClick
+                            Send NavigatePath
+                        End_Procedure
+                    End_Object
+                    
 
             End_Object
 
@@ -225,6 +235,7 @@ Object oWebApp is a cWebApp
     Use LigaSelect.wo
     Use EntrenadorZoom.wo
     Use EntrenadorSelect.wo
+    Use PosicionZoom.wo
     Set phoDefaultView to oDashboard
 
 End_Object

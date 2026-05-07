@@ -50,8 +50,18 @@ Object oWebApp is a cWebApp
                 End_Object
 
                 Object oViewMenu is a cWebMenuItem
-                    Set psCaption to C_$View
+                Set psCaption to "Vistas"
+
+                Object oJugadorZoom_itm is a cWebMenuItem
+                    Set psCaption to "Detalle jugador"
+
+                    WebRegisterPath ntNavigateBegin oJugadorZoom
+
+                    Procedure OnClick
+                        Send NavigatePath
+                    End_Procedure
                 End_Object
+            End_Object
 
                 Object oSignOut_itm is a cWebMenuItem
                     Set psCaption to C_$LogOut
@@ -132,6 +142,7 @@ Object oWebApp is a cWebApp
     Use WebResourceManager.wo
     
     Use Dashboard.wo
+    Use JugadorZoom.wo
     Set phoDefaultView to oDashboard
 
 End_Object

@@ -144,6 +144,17 @@ Object oWebApp is a cWebApp
                             Send NavigatePath
                         End_Procedure
                     End_Object
+
+                    Object oPosicionesItem1 is a cWebMenuItem
+                        Set psCaption to "Posiciones"
+
+                        WebRegisterPath ntNavigateBegin oPosicionSelect
+
+                        Procedure OnClick
+                            Forward Send OnClick
+                                Send NavigatePath
+                        End_Procedure
+                    End_Object
                     
 
             End_Object
@@ -236,6 +247,7 @@ Object oWebApp is a cWebApp
     Use EntrenadorZoom.wo
     Use EntrenadorSelect.wo
     Use PosicionZoom.wo
+    Use PosicionSelect.wo
     Set phoDefaultView to oDashboard
 
 End_Object
